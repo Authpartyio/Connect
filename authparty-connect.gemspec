@@ -1,6 +1,6 @@
 Gem::Specification.new do |g|
   g.name          = 'authparty-connect'
-  g.version       = '0.0.0'
+  g.version       = '0.0.2'
   g.date          = '2016-11-14'
   g.summary       =
     'Easily add blockchain-based authorization and identity management to your service.'
@@ -11,6 +11,6 @@ Gem::Specification.new do |g|
   g.homepage      =
     'http://authparty.io'
   g.license       = 'MIT'
-  g.add_runtime_dependency 'json', ['= 2.2.2']
+  g.add_runtime_dependency 'json', ['~> 0']
   g.add_runtime_dependency 'httparty', ['= 0.14.0']
 end

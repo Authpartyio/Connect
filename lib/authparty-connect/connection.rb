@@ -11,8 +11,15 @@ class AuthpartyConnect::Connection
     puts HTTParty.get(@base_api_url + 'providers')
   end
 
+  # Get Login Path (For Official Authparty Login Pages)
   def login_path
     puts HTTParty.get(@base_api_url + 'providers/authorize_url?api_key=' + @credentials[:api_key])
+  end
+
+  # Acquire QR-code
+  def authorize_qrcode
+    @qrcode = HTTParty.get(@base_api_url + 'providers/authorize_qrcode?api_key=' + @credentials[:api_key] + '&callback_url=' + @base_api_url + 'providers/authorize_login')
+    return @qrcode
   end
 
   protected
